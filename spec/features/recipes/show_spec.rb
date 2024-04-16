@@ -27,8 +27,14 @@ RSpec.describe "Recipes Show", type: :feature do
   it "and I see a list of the names of the ingredients for the recipe" do
     visit "/recipes/#{@tacos.id}"
 
+    save_and_open_page
+
     expect(page).to have_content(@onion.name)
     expect(page).to have_content(@garlic.name)
     expect(page).to have_content(@tomato.name)
   end
+
+  # it "sees the total cost of all of the ingredients in the recipe" do
+  #   x
+  # end
 end
